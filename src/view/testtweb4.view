@@ -1,0 +1,31 @@
+{{ Css( 'app.css' ) }}
+
+<?prg
+
+	#include {{ TWebInclude() }}
+	
+	LOCAL o
+	LOCAL hData	:= pvalue(1)		
+	
+	DEFINE WEB oWeb TITLE 'Tutor 4' INIT			
+	 
+	DEFINE FORM o ID 'demo' ACTION "{{ Route( 'test3' ) }}" METHOD 'POST'
+	 
+		HTML o INLINE '<h2>Pantalla 4</h4><hr>'
+	
+	INIT FORM o
+	
+		ROWGROUP o
+		
+			cLabel := hData[ 'id' ] + '<br>' + hData[ 'first' ]
+			
+			CAPTION o LABEL cLabel GRID 3			
+			
+			BUTTON ID 'btn' LABEL 'Back' GRID 3 SUBMIT OF o
+		
+		END o	
+	
+	END FORM o RETURN	
+?>
+
+{{ View( 'footer.view' ) }}

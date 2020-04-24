@@ -1,0 +1,28 @@
+<?prg
+
+	#include {{ TWebInclude() }}
+	
+	LOCAL o
+	
+	DEFINE WEB oWeb TITLE 'Tutor 3' INIT
+	
+	DEFINE FORM o ID 'demo' ACTION "{{ Route( 'test4' ) }}" METHOD 'POST'
+	
+	INIT FORM o
+	
+		HTML o INLINE '<h2>Pantalla 3</h4><hr>'
+	
+		ROWGROUP o
+		
+			GET ID 'id' 	VALUE '123' 		GRID 3 LABEL 'Id.' 		OF o
+			GET ID 'first' 	VALUE 'Baby Boom'	GRID 5 LABEL 'First' 	OF o
+			
+			BUTTON ID 'btn' LABEL 'Enviar' GRID 3 SUBMIT OF o
+		
+		END o
+	
+	
+	END FORM o RETURN	
+
+?>
+
